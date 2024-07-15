@@ -1,0 +1,57 @@
+/*Common*/
+.page{width: auto;height:80vh}
+nav ul li{display:inline}
+.menuHide{ /*for using add/remove class on menuList*/
+    display:block;
+}
+body{margin: 0px; background-color: rgb(43, 43, 43);}
+button:hover {text-decoration: underline;}
+p{font-size: x-large;}
+p.centered{text-align: center;}
+img.centered{display: block; margin-left: auto; margin-right: auto; width: 50%;}
+
+#hamIcon{display:none;}
+@media screen and (max-width:800px){ /*mobile/tablet screensize | <=800*/
+    /*Responsive menu*/
+    nav {display: block; text-align: center;}
+    nav ul {display: none; margin: 0; padding: 0; list-style-type: none;}
+    nav ul.open {display: block;}
+    nav ul li {display: block; margin: 0;}
+    nav ul li button {width: 100%; padding: 10px; font-size: larger; text-align: center;}
+    #hamIcon {display: block; width: 100%;}
+
+    body{background-color: rgb(30, 79, 90);}
+    button{width: 100%; margin: 0; font-size: xx-large; height: 80px}
+    button.TitleName {height: 100px; background-color: gray ; border: none}
+    div.homepagedesc{ font-size: x-large; color: white;}
+    img.homepage{width: 100%; height: 800px; object-fit: cover}
+    div.yap{display: block; margin: auto; margin-top: 20px; width: 90%; color: white}
+}
+
+@media screen and (min-width: 801px) { /*desktop screensize | >800*/
+    button{background: transparent; border: none; color: white;}
+    div.homepageimg{ display: flex; flex-direction: column; justify-content: flex-end; height: 600px;
+        background-image: url("images/atomic_bomb.jpg"); background-size: 100% auto; background-repeat: no-repeat;}
+    div.homepagedesc{font-size: xx-large; color: white; text-align: center; font-weight: bolder;}
+    div h1{margin: 0}
+    div h2{margin-top: 10px; margin-bottom: 70px;}
+    img.homepage{width: 100%; height: 800px; object-fit: cover}
+    div.topBar {display: flex; justify-content: space-between; align-items: center;}
+    button.TitleName {margin-left: 10px; width: fit-content; line-height: 50px; margin: 20px; font-size: xx-large; font-weight: bolder; color: white;}
+    nav {display: flex; justify-content: flex-end; width: fit-content; margin-left: auto;}
+    nav ul {display: flex; list-style-type: none; margin: 0; padding: 0;}
+    nav ul li {display:inline; margin-right: 50px;}
+    nav ul li button {font-size: x-large;}
+
+    div.yap{display: block; margin: auto; width: 90%; color: white}
+}
+
+/*testing boxes*/
+/*
+div{border: 1px solid red;}
+nav{border: 1px solid red;}
+h1{border: 1px solid red;}
+#page1{border: 2px solid red}
+#page2{border: 2px solid green}
+#page3{border: 2px solid blue}
+*/
