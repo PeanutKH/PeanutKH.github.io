@@ -4,20 +4,25 @@ const page2btn=document.querySelector("#page2btn");
 const page3btn=document.querySelector("#page3btn");
 const page4btn=document.querySelector("#page4btn");
 var allpages=document.querySelectorAll(".page");
-const prevPflbtn=document.querySelector("#prevProfilebtn");
-const nextPflbtn=document.querySelector("#nxtProfilebtn");
-//var allprofiles=document.querySelector(".profile");
-document.addEventListener('keydown', handleKeydown); /*NEW*/
+document.addEventListener('keydown', handleKeydown);
 const ball = document.querySelector("#ball");
 const box = document.querySelector("#box");
 var ballX = 0;
 var ballY = 0;
+const confirmButton = document.querySelector('#confirmButton');
+confirmButton.addEventListener('click', checkCollision);
+
+/*HamMenu */
+const hamBtn=document.querySelector("#hamIcon");
+hamBtn.addEventListener("click",toggleMenus);
+const menuItemsList=document.querySelector("nav ul");
+function toggleMenus(){ /*open and close menu*/
+    menuItemsList.classList.toggle("menuHide");
+}
 
 //select all subtopic pages
 console.log(allpages);
 hideall();
-// hideallProfiles();
-// showProfile(1);
 show(1);
 function hideall(){ //function to hide all pages
     for(let onepage of allpages){ //go through all subtopic pages
@@ -52,20 +57,6 @@ page4btn.addEventListener("click", function () {
 show(4);
 toggleMenus();
 });
-prevPflbtn.addEventListener("Click", function () {
-console.log("Go back to previous profile");
-});
-nextPflbtn.addEventListener("Click", function () {
-    console.log("Go to next profile");
-});
-
-/*HamMenu */
-const hamBtn=document.querySelector("#hamIcon");
-hamBtn.addEventListener("click",toggleMenus);
-const menuItemsList=document.querySelector("nav ul");
-function toggleMenus(){ /*open and close menu*/
-    menuItemsList.classList.toggle("menuHide");
-}
 
 // Function to handle keydown events - NEW
 function handleKeydown(event) {
@@ -144,9 +135,6 @@ function handleTouchStart(event) {
     updateBallPosition(0, 0);
   }
 }
-
-const confirmButton = document.querySelector('#confirmButton');
-confirmButton.addEventListener('click', checkCollision);
 
 function checkCollision() {
     // Get the current positon of ball
